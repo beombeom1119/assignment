@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+void BubbleSort(int *DataSet, int Length) {
+
+	int i = 0; //제일 큰 숫자가 들어각는 위치를 표시
+	int j = 0; //비교 대상이 되는 위치를 표시
+	int temp = 0;
+
+	for ( i = Length-1; i >0; i--)
+	{
+		for (j = 0; j < i; j++) {
+			if (DataSet[j]>DataSet[j+1])
+			{
+				temp = DataSet[j + 1];
+				DataSet[j + 1] = DataSet[j];
+				DataSet[j] = temp;
+			}
+		}
+	}
+
+}
+int main() {
+	int DataSet[] = { 6, 4, 2, 3, 1, 5 };
+	int Length = sizeof DataSet / sizeof DataSet[0];
+
+	BubbleSort(DataSet, Length);
+
+	for (int i = 0; i < Length; i++)
+	{
+		printf("%d", DataSet[i]);
+		printf("\n");
+	}
+
+	return 0;
+}
